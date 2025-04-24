@@ -19,13 +19,13 @@ function App() {
   const [toDate, setToDate] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/entries").then((res) => setEntries(res.data));
+    axios.get("https://inward-outward-management-backend.onrender.com").then((res) => setEntries(res.data));
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/api/entries", form);
-    const res = await axios.get("http://localhost:5000/api/entries");
+    await axios.post("https://inward-outward-management-backend.onrender.com", form);
+    const res = await axios.get("https://inward-outward-management-backend.onrender.com");
     setEntries(res.data);
   };
 
